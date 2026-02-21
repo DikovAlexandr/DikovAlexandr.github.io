@@ -22,11 +22,6 @@
   <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
   <header class="topbar container reveal">
-    <div class="pill">
-      <span class="dot"></span>
-      Portfolio Presentation
-    </div>
-
     <nav class="top-actions">
       <a class="btn btn-ghost" href="https://github.com/DikovAlexandr" target="_blank" rel="noreferrer">
         GitHub
@@ -34,22 +29,15 @@
       <a class="btn btn-primary" href="#projects">
         Проекты
       </a>
-      <a class="btn btn-ghost" href="./DikovCVru_2025.pdf" target="_blank" rel="noreferrer">
-        CV
-      </a>
     </nav>
   </header>
 
   <main>
     <section class="hero container">
       <div class="hero-left reveal">
-        <div class="tag">
-          <span>✨</span> Research • ML • Engineering
-        </div>
-
         <h1>
           Александр Диков
-          <span class="gradient-text">ML Engineer • NLP/CV</span>
+          <span class="gradient-text">ML Engineer <br> NLP/CV</span>
         </h1>
 
         <p class="lead">
@@ -69,41 +57,33 @@
             Контакты
           </a>
         </div>
-
-        <div class="stats">
-          <div class="stat-card">
-            <div class="stat-value">2+ years</div>
-            <div class="stat-label">Practical ML experience</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-value">NLP / CV</div>
-            <div class="stat-label">Focus</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-value">SciML + RAG</div>
-            <div class="stat-label">Research & engineering</div>
-          </div>
-        </div>
       </div>
 
       <aside class="hero-right reveal delay-1">
-        <div class="glass-card identity-card tilt-card">
+        <div class="glass-card identity-card">
           <div class="identity-header">
             <div>
-              <div class="muted">Identity</div>
+              <div class="muted">Профиль</div>
               <div class="identity-name">DikovAlexandr</div>
             </div>
-            <div class="featured-badge">★ Featured</div>
           </div>
 
           <div class="identity-list">
             <div class="info-card">
-              <div class="muted">Role</div>
+              <div class="muted">Роль</div>
               <div>ML Engineer</div>
             </div>
             <div class="info-card">
-              <div class="muted">Focus</div>
-              <div>NLP • CV • LLMs • SciML • RAG</div>
+              <div class="muted">Фокус</div>
+              <div>NLP • CV • LLM • SciML • RAG • MLOps</div>
+            </div>
+            <div class="info-card">
+              <div class="muted">Опыт</div>
+              <div>2+ года: Цифрум, Сбер, GET LAB</div>
+            </div>
+            <div class="info-card">
+              <div class="muted">Основные стеки</div>
+              <div>PyTorch, Transformers, ONNX Runtime, LangChain</div>
             </div>
             <div class="info-card">
               <div class="muted">GitHub</div>
@@ -113,12 +93,6 @@
                 </a>
               </div>
             </div>
-            <div class="info-card">
-              <div class="muted">Email</div>
-              <div>
-                <a href="mailto:dsasha0102@gmail.com">dsasha0102@gmail.com</a>
-              </div>
-            </div>
           </div>
         </div>
       </aside>
@@ -126,143 +100,124 @@
 
     <section class="container section reveal">
       <div class="section-head">
-        <div class="section-kicker">Tech & interests</div>
+        <div class="section-kicker">Технологии</div>
         <h2>Стек и направления</h2>
       </div>
 
       <div class="chips-grid">
-        <div class="chip">Python</div>
-        <div class="chip">C++</div>
-        <div class="chip">PyTorch</div>
-        <div class="chip">Transformers / PEFT</div>
+        <div class="chip chip-wide">PyTorch</div>
+        <div class="chip">Keras</div>
+        <div class="chip chip-wide">Transformers + PEFT</div>
+        <div class="chip">OpenCV</div>
+        <div class="chip chip-wide">NLP / LLMs</div>
         <div class="chip">Computer Vision</div>
-        <div class="chip">NLP & LLMs</div>
-        <div class="chip">RAG (LangChain)</div>
-        <div class="chip">PINN / SciML</div>
-        <div class="chip">ONNX Runtime / TensorRT</div>
-        <div class="chip">Docker / Linux / API</div>
-      </div>
-    </section>
-
-    <section class="container section grid-2">
-      <div class="glass-card reveal">
-        <h3>Профессиональный опыт</h3>
-        <ul class="bullet-list">
-          <li>Стажер в Цифрум (1 год): fine-tuning TaTR для сегментации таблиц в документах, разработка PINN-решателя для CFD задач.</li>
-          <li>Junior ML Developer в Сбере (6 месяцев): R&D моделей для идентификации токсичных SQL-запросов (TF-IDF, BERT, GNN).</li>
-          <li>Python Developer в GET LAB (1.5 года): ONNX-инференс, RAG по документации, агентные решения для инженерных задач.</li>
-        </ul>
-      </div>
-
-      <div class="glass-card reveal delay-1">
-        <h3>Образование и достижения</h3>
-        <ul class="bullet-list">
-          <li>НИЯУ МИФИ: магистратура по прикладной математике и информатике (с 2024), бакалавриат по прикладной математике и физике (2020–2024).</li>
-          <li>Победитель НТО по компьютерному зрению, победитель хакатонов «РазвивAI», «NuclearIT», «Лидеры цифровой трансформации».</li>
-          <li>Преподаватель курса «Машинное обучение для научных вычислений».</li>
-        </ul>
+        <div class="chip chip-wide">LangChain + smolagents</div>
+        <div class="chip">scikit-learn</div>
+        <div class="chip">scipy</div>
+        <div class="chip chip-wide">ONNX Runtime</div>
+        <div class="chip">TensorRT</div>
+        <div class="chip">Triton</div>
+        <div class="chip">vLLM</div>
+        <div class="chip">llama.cpp</div>
+        <div class="chip">Faiss</div>
+        <div class="chip">ChromaDB</div>
+        <div class="chip">Sphinx</div>
+        <div class="chip">Docker</div>
+        <div class="chip">Linux</div>
+        <div class="chip">Prometheus</div>
+        <div class="chip">Grafana</div>
+        <div class="chip">PostgreSQL</div>
+        <div class="chip">REST/gRPC API</div>
       </div>
     </section>
 
     <section id="projects" class="container section">
       <div class="section-head reveal">
-        <div class="section-kicker">Selected repositories</div>
+        <div class="section-kicker">Репозитории</div>
         <h2>Топ-репозитории</h2>
         <p class="section-desc">
-          Репозитории, которые лучше всего отражают профиль NLP/CV Engineer и исследовательский трек.
+          Ключевые проекты с акцентом на исследовательскую и прикладную ML-инженерию.
         </p>
       </div>
 
       <div class="projects-grid">
-        <article class="project-card tilt-card reveal">
+        <article class="project-card project-card-compact">
           <div class="project-glow glow-pink"></div>
           <div class="project-content">
             <div class="project-top">
               <div>
                 <h3>PINN</h3>
-                <p>Physics-Informed Neural Networks for CFD/PDE tasks</p>
+                <p>Public repository</p>
               </div>
-              <span class="project-icon">✨</span>
             </div>
             <p class="project-text">
-              Исследовательский проект на стыке ML и вычислительной физики.
-              Фокус на PINN-подходе к задачам моделирования и численным экспериментам.
+              Physics-Informed Neural Networks для задач CFD/PDE и научных вычислений.
             </p>
             <div class="tags">
-              <span>PINN</span>
               <span>SciML</span>
-              <span>Research</span>
+              <span>PINN</span>
             </div>
-            <a class="btn btn-card" href="https://github.com/DikovAlexandr/PINN" target="_blank" rel="noreferrer">Open repo →</a>
+            <a class="btn btn-card" href="https://github.com/DikovAlexandr/PINN" target="_blank" rel="noreferrer">Открыть репозиторий</a>
           </div>
         </article>
 
-        <article class="project-card tilt-card reveal delay-1">
+        <article class="project-card project-card-compact">
           <div class="project-glow glow-cyan"></div>
           <div class="project-content">
             <div class="project-top">
               <div>
                 <h3>AtomRAG</h3>
-                <p>RAG-система по технической документации (private)</p>
+                <p>Private repository</p>
               </div>
-              <span class="project-icon">📄</span>
             </div>
             <p class="project-text">
-              Закрытый репозиторий с RAG-архитектурой для прикладных задач поиска и ответа по документации.
-              Покрывает пайплайн индексации, retrieval и генерацию ответов.
+              RAG-система по технической документации: индексация, retrieval, генерация ответа.
             </p>
             <div class="tags">
               <span>RAG</span>
               <span>LLM</span>
-              <span>Private repo</span>
             </div>
-            <a class="btn btn-card" href="https://github.com/DikovAlexandr" target="_blank" rel="noreferrer">Private repo</a>
+            <a class="btn btn-card" href="https://github.com/DikovAlexandr" target="_blank" rel="noreferrer">Закрытый репозиторий</a>
           </div>
         </article>
 
-        <article class="project-card tilt-card reveal">
+        <article class="project-card project-card-compact">
           <div class="project-glow glow-green"></div>
           <div class="project-content">
             <div class="project-top">
               <div>
                 <h3>dico</h3>
-                <p>Исследовательский репозиторий для статьи (private)</p>
+                <p>Private repository</p>
               </div>
-              <span class="project-icon">🧪</span>
             </div>
             <p class="project-text">
-              Закрытый репозиторий, используемый в подготовке научного материала.
-              Демонстрирует работу с исследовательским циклом: от идеи до воспроизводимого эксперимента.
+              Исследовательский репозиторий для подготовки статьи и воспроизводимых экспериментов.
             </p>
             <div class="tags">
               <span>NLP/CV</span>
               <span>Research</span>
-              <span>Private repo</span>
             </div>
-            <a class="btn btn-card" href="https://github.com/DikovAlexandr" target="_blank" rel="noreferrer">Private repo</a>
+            <a class="btn btn-card" href="https://github.com/DikovAlexandr" target="_blank" rel="noreferrer">Закрытый репозиторий</a>
           </div>
         </article>
 
-        <article class="project-card tilt-card reveal delay-1">
+        <article class="project-card project-card-compact">
           <div class="project-glow glow-orange"></div>
           <div class="project-content">
             <div class="project-top">
               <div>
                 <h3>fine-tune-platform</h3>
-                <p>Платформа для экспериментов с тонкой настройкой моделей</p>
+                <p>Public repository</p>
               </div>
-              <span class="project-icon">📐</span>
             </div>
             <p class="project-text">
-              Хакатонный и продуктовый формат разработки: быстрый цикл проверки гипотез,
-              удобная инфраструктура для обучения и сравнения ML-моделей.
+              Платформа для экспериментов с fine-tuning и сравнения ML-моделей.
             </p>
             <div class="tags">
               <span>Fine-tuning</span>
               <span>MLOps</span>
-              <span>Hackathon</span>
             </div>
-            <a class="btn btn-card" href="https://github.com/DikovAlexandr/fine-tune-platform" target="_blank" rel="noreferrer">Open repo →</a>
+            <a class="btn btn-card" href="https://github.com/DikovAlexandr/fine-tune-platform" target="_blank" rel="noreferrer">Открыть репозиторий</a>
           </div>
         </article>
       </div>

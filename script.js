@@ -83,20 +83,23 @@ function initFluid(canvas) {
     moved: false,
     x: window.innerWidth * 0.5,
     y: window.innerHeight * 0.5,
+    px: window.innerWidth * 0.5,
+    py: window.innerHeight * 0.5,
     dx: 0,
     dy: 0,
     color: [0.22, 0.38, 0.78]
   };
 
   const config = {
-    SIM_RESOLUTION: 256,
-    DYE_RESOLUTION: 1024,
-    DENSITY_DISSIPATION: 0.993,
-    VELOCITY_DISSIPATION: 0.998,
+    SIM_RESOLUTION: 320,
+    DYE_RESOLUTION: 2048,
+    DENSITY_DISSIPATION: 0.982,
+    VELOCITY_DISSIPATION: 0.996,
     PRESSURE_DISSIPATION: 0.992,
-    PRESSURE_ITERATIONS: 24,
-    CURL: 10,
-    SPLAT_RADIUS: 0.0075
+    PRESSURE_ITERATIONS: 28,
+    CURL: 8,
+    SPLAT_RADIUS: 0.0058,
+    MAX_SPLAT_FORCE: 170.0
   };
 
   const baseVertexShader = compileShader(gl.VERTEX_SHADER, `
@@ -133,15 +136,31 @@ function initFluid(canvas) {
     varying vec2 vUv;
     uniform sampler2D uTexture;
     uniform vec2 texelSize;
+    float hash(vec2 p) {
+      return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453);
+    }
     void main () {
-      vec3 c = texture2D(uTexture, vUv).rgb;
-      c += texture2D(uTexture, vUv + vec2(texelSize.x, 0.0)).rgb;
-      c += texture2D(uTexture, vUv - vec2(texelSize.x, 0.0)).rgb;
-      c += texture2D(uTexture, vUv + vec2(0.0, texelSize.y)).rgb;
-      c += texture2D(uTexture, vUv - vec2(0.0, texelSize.y)).rgb;
-      c /= 5.0;
-      c = 1.0 - exp(-0.95 * c);
-      gl_FragColor = vec4(c, 0.58);
+      vec2 dx = vec2(texelSize.x, 0.0);
+      vec2 dy = vec2(0.0, texelSize.y);
+      vec2 d1 = dx + dy;
+      vec2 d2 = dx - dy;
+
+      vec3 c = vec3(0.0);
+      c += texture2D(uTexture, vUv).rgb * 0.24;
+      c += (texture2D(uTexture, vUv + dx).rgb + texture2D(uTexture, vUv - dx).rgb +
+            texture2D(uTexture, vUv + dy).rgb + texture2D(uTexture, vUv - dy).rgb) * 0.12;
+      c += (texture2D(uTexture, vUv + d1).rgb + texture2D(uTexture, vUv - d1).rgb +
+            texture2D(uTexture, vUv + d2).rgb + texture2D(uTexture, vUv - d2).rgb) * 0.09;
+      c += (texture2D(uTexture, vUv + dx * 2.0).rgb + texture2D(uTexture, vUv - dx * 2.0).rgb +
+            texture2D(uTexture, vUv + dy * 2.0).rgb + texture2D(uTexture, vUv - dy * 2.0).rgb) * 0.035;
+
+      c = 1.0 - exp(-0.82 * c);
+      float luma = dot(c, vec3(0.2126, 0.7152, 0.0722));
+      float alpha = smoothstep(0.008, 0.22, luma) * 0.52;
+
+      float n = hash(vUv * vec2(1920.0, 1080.0)) - 0.5;
+      c += n / 255.0;
+      gl_FragColor = vec4(c, alpha);
     }
   `);
 
@@ -315,12 +334,16 @@ function initFluid(canvas) {
     if (!t) return;
     pointer.down = true;
     pointer.color = randomColor();
+    pointer.px = t.clientX;
+    pointer.py = t.clientY;
     pointer.x = t.clientX;
     pointer.y = t.clientY;
   }, { passive: true });
   window.addEventListener('touchmove', (e) => {
     const t = e.touches[0];
     if (!t) return;
+    pointer.px = pointer.x;
+    pointer.py = pointer.y;
     const dx = t.clientX - pointer.x;
     const dy = t.clientY - pointer.y;
     pointer.dx = dx * 2.2;
@@ -341,13 +364,21 @@ function initFluid(canvas) {
     lastTime = now;
 
     if (pointer.moved) {
-      splat(
-        pointer.x / canvas.width,
-        1.0 - pointer.y / canvas.height,
-        pointer.dx,
-        -pointer.dy,
-        pointer.color
-      );
+      const [vx, vy] = clampForce(pointer.dx, pointer.dy, config.MAX_SPLAT_FORCE);
+      const distance = Math.hypot(pointer.x - pointer.px, pointer.y - pointer.py);
+      const steps = Math.min(8, Math.max(1, Math.ceil(distance / 18)));
+      for (let i = 1; i <= steps; i++) {
+        const t = i / steps;
+        const sx = pointer.px + (pointer.x - pointer.px) * t;
+        const sy = pointer.py + (pointer.y - pointer.py) * t;
+        splat(
+          sx / window.innerWidth,
+          1.0 - sy / window.innerHeight,
+          vx / steps,
+          -vy / steps,
+          pointer.color
+        );
+      }
       pointer.moved = false;
     }
 
@@ -440,24 +471,26 @@ function initFluid(canvas) {
     uniform1f(splatProgram, 'aspectRatio', canvas.width / canvas.height);
     uniform2f(splatProgram, 'point', x, y);
     uniform3f(splatProgram, 'color', color[0], color[1], color[2]);
-    uniform1f(splatProgram, 'radius', config.SPLAT_RADIUS * 1.2);
+    uniform1f(splatProgram, 'radius', config.SPLAT_RADIUS);
     blit(dye.write.fbo);
     dye.swap();
   }
 
   function randomInitialSplats() {
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 2; i++) {
       const x = Math.random();
       const y = Math.random();
-      const dx = (Math.random() - 0.5) * 240;
-      const dy = (Math.random() - 0.5) * 240;
+      const dx = (Math.random() - 0.5) * 120;
+      const dy = (Math.random() - 0.5) * 120;
       splat(x, y, dx, dy, randomColor());
     }
   }
 
   function onMouseMove(e) {
-    const dx = e.clientX - pointer.x;
-    const dy = e.clientY - pointer.y;
+    pointer.px = pointer.x;
+    pointer.py = pointer.y;
+    const dx = e.clientX - pointer.px;
+    const dy = e.clientY - pointer.py;
     pointer.x = e.clientX;
     pointer.y = e.clientY;
     const boost = pointer.down ? 4.2 : 2.4;
@@ -599,6 +632,13 @@ function initFluid(canvas) {
     ];
     const intensity = 0.26 + Math.random() * 0.10;
     return color.map((c) => c * intensity);
+  }
+
+  function clampForce(x, y, maxLen) {
+    const len = Math.hypot(x, y);
+    if (len <= maxLen || len < 1e-5) return [x, y];
+    const s = maxLen / len;
+    return [x * s, y * s];
   }
 
   function getExtensions(glCtx, webgl2) {
