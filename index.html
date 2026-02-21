@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Александр Диков — ML / R&D Engineer</title>
+  <meta name="description" content="Портфолио Александра Дикова: ML / R&D, PINN, численные методы, обработка документов, инженерные проекты." />
+  <meta name="theme-color" content="#0a0b12" />
+
+  <meta property="og:title" content="Александр Диков — ML / R&D Engineer" />
+  <meta property="og:description" content="Сочный GitHub Pages сайт-портфолио с проектами и анимациями." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://dikovalexandr.github.io/" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <div class="noise" aria-hidden="true"></div>
+  <div class="orb orb-1" aria-hidden="true"></div>
+  <div class="orb orb-2" aria-hidden="true"></div>
+  <div class="orb orb-3" aria-hidden="true"></div>
+
+  <header class="topbar container reveal">
+    <div class="pill">
+      <span class="dot"></span>
+      Portfolio Presentation
+    </div>
+
+    <nav class="top-actions">
+      <a class="btn btn-ghost" href="https://github.com/DikovAlexandr" target="_blank" rel="noreferrer">
+        GitHub
+      </a>
+      <a class="btn btn-primary" href="#projects">
+        Проекты
+      </a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="hero-left reveal">
+        <div class="tag">
+          <span>✨</span> Research • ML • Engineering
+        </div>
+
+        <h1>
+          Александр Диков
+          <span class="gradient-text">ML / R&D Engineer</span>
+        </h1>
+
+        <p class="lead">
+          Исследования, numerical methods, PINN, обработка документов и инженерные проекты.
+        </p>
+
+        <p class="sublead">
+          Делаю проекты на стыке машинного обучения, вычислительных методов и практической инженерии.
+          Люблю превращать исследовательские идеи в понятные прототипы и рабочие инструменты.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://github.com/DikovAlexandr" target="_blank" rel="noreferrer">
+            Смотреть GitHub
+          </a>
+          <a class="btn btn-ghost" href="#contacts">
+            Контакты
+          </a>
+        </div>
+
+        <div class="stats">
+          <div class="stat-card">
+            <div class="stat-value">12+</div>
+            <div class="stat-label">Repositories</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value">ML / R&D</div>
+            <div class="stat-label">Focus</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value">PINN</div>
+            <div class="stat-label">Research interest</div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero-right reveal delay-1">
+        <div class="glass-card identity-card tilt-card">
+          <div class="identity-header">
+            <div>
+              <div class="muted">Identity</div>
+              <div class="identity-name">DikovAlexandr</div>
+            </div>
+            <div class="featured-badge">★ Featured</div>
+          </div>
+
+          <div class="identity-list">
+            <div class="info-card">
+              <div class="muted">Role</div>
+              <div>ML / R&D Engineer</div>
+            </div>
+            <div class="info-card">
+              <div class="muted">Focus</div>
+              <div>PINN • Numerical Methods • Document AI</div>
+            </div>
+            <div class="info-card">
+              <div class="muted">GitHub</div>
+              <div>
+                <a href="https://github.com/DikovAlexandr" target="_blank" rel="noreferrer">
+                  github.com/DikovAlexandr
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="container section reveal">
+      <div class="section-head">
+        <div class="section-kicker">Tech & interests</div>
+        <h2>Стек и направления</h2>
+      </div>
+
+      <div class="chips-grid">
+        <div class="chip">Python</div>
+        <div class="chip">C++</div>
+        <div class="chip">Machine Learning</div>
+        <div class="chip">PINN</div>
+        <div class="chip">Numerical Methods</div>
+        <div class="chip">OpenCV / OCR</div>
+        <div class="chip">Document Parsing</div>
+        <div class="chip">Scientific Computing</div>
+      </div>
+    </section>
+
+    <section id="projects" class="container section">
+      <div class="section-head reveal">
+        <div class="section-kicker">Selected repositories</div>
+        <h2>Проекты, которые стоит показать</h2>
+        <p class="section-desc">
+          Ниже — красиво оформленные карточки. Просто меняй ссылки/описания под актуальные репозитории.
+        </p>
+      </div>
+
+      <div class="projects-grid">
+        <article class="project-card tilt-card reveal">
+          <div class="project-glow glow-pink"></div>
+          <div class="project-content">
+            <div class="project-top">
+              <div>
+                <h3>PINN</h3>
+                <p>Physics-Informed Neural Networks for heat equation</p>
+              </div>
+              <span class="project-icon">✨</span>
+            </div>
+            <p class="project-text">
+              Исследовательский проект по PINN для решения задач математической физики.
+              Демонстрирует связку ML + физика + численные методы.
+            </p>
+            <div class="tags">
+              <span>PINN</span>
+              <span>Physics</span>
+              <span>Research</span>
+            </div>
+            <a class="btn btn-card" href="https://github.com/DikovAlexandr/PINN" target="_blank" rel="noreferrer">Open repo →</a>
+          </div>
+        </article>
+
+        <article class="project-card tilt-card reveal delay-1">
+          <div class="project-glow glow-cyan"></div>
+          <div class="project-content">
+            <div class="project-top">
+              <div>
+                <h3>TableExtraction</h3>
+                <p>Извлечение данных из таблиц в документах</p>
+              </div>
+              <span class="project-icon">📄</span>
+            </div>
+            <p class="project-text">
+              Практический R&D-кейс по обработке документов: парсинг табличных данных, OCR-подходы,
+              работа со сканами и цифровыми источниками.
+            </p>
+            <div class="tags">
+              <span>OpenCV</span>
+              <span>OCR</span>
+              <span>Document AI</span>
+            </div>
+            <a class="btn btn-card" href="https://github.com/DikovAlexandr/TableExtraction" target="_blank" rel="noreferrer">Open repo →</a>
+          </div>
+        </article>
+
+        <article class="project-card tilt-card reveal">
+          <div class="project-glow glow-green"></div>
+          <div class="project-content">
+            <div class="project-top">
+              <div>
+                <h3>ChemistryParser</h3>
+                <p>Термодинамические величины по химическим формулам</p>
+              </div>
+              <span class="project-icon">🧪</span>
+            </div>
+            <p class="project-text">
+              Инженерный/научный инструмент с предметной логикой и вычислениями.
+              Хороший пример прикладного вычислительного ПО.
+            </p>
+            <div class="tags">
+              <span>C++</span>
+              <span>Scientific</span>
+              <span>Parsing</span>
+            </div>
+            <a class="btn btn-card" href="https://github.com/DikovAlexandr/ChemistryParser" target="_blank" rel="noreferrer">Open repo →</a>
+          </div>
+        </article>
+
+        <article class="project-card tilt-card reveal delay-1">
+          <div class="project-glow glow-orange"></div>
+          <div class="project-content">
+            <div class="project-top">
+              <div>
+                <h3>NumericalMethods</h3>
+                <p>Программы по курсу «Численные методы»</p>
+              </div>
+              <span class="project-icon">📐</span>
+            </div>
+            <p class="project-text">
+              Учебно-прикладные реализации численных методов: фундаментальная база,
+              алгоритмическое мышление и инженерная аккуратность.
+            </p>
+            <div class="tags">
+              <span>Numerics</span>
+              <span>Algorithms</span>
+              <span>Jupyter</span>
+            </div>
+            <a class="btn btn-card" href="https://github.com/DikovAlexandr/NumericalMethods" target="_blank" rel="noreferrer">Open repo →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="container section grid-2">
+      <div class="glass-card reveal">
+        <h3>Почему профиль сильный</h3>
+        <ul class="bullet-list">
+          <li>Сочетание фундаментальных задач (численные методы, физика) и ML-подходов.</li>
+          <li>Практические R&D-кейсы по обработке документов и извлечению данных.</li>
+          <li>Хорошая база для позиционирования как ML / R&D engineer.</li>
+        </ul>
+      </div>
+
+      <div class="glass-card reveal delay-1">
+        <h3>Что можно быстро улучшить</h3>
+        <div class="mini-grid">
+          <div>Добавить фото/аватар</div>
+          <div>Секция опыт работы</div>
+          <div>Публикации / доклады</div>
+          <div>RU/EN переключатель</div>
+          <div>GitHub API (динамика)</div>
+          <div>Тёмная/светлая тема</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacts" class="container section reveal">
+      <div class="section-head">
+        <div class="section-kicker">Contacts</div>
+        <h2>Связаться со мной</h2>
+      </div>
+
+      <div class="contact-card glass-card">
+        <p>
+          GitHub: <a href="https://github.com/DikovAlexandr" target="_blank" rel="noreferrer">github.com/DikovAlexandr</a>
+        </p>
+        <p class="muted">
+          (Сюда можно добавить email, Telegram, LinkedIn, CV PDF)
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <a class="floating-cta" href="#projects" aria-label="К проектам">↓ Проекты</a>
+
+  <script src="./script.js"></script>
+</body>
+</html>
