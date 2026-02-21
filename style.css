@@ -509,15 +509,24 @@
     line-height: 1.65;
   }
   
-  .bullet-list li + li {
-    margin-top: 8px;
-  }
-  
-  .mini-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0,1fr));
-    gap: 10px;
-  }
+.bullet-list li + li {
+  margin-top: 8px;
+}
+
+.bullet-list a {
+  color: #bfefff;
+  text-decoration: none;
+}
+
+.bullet-list a:hover {
+  text-decoration: underline;
+}
+
+.mini-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 10px;
+}
   .mini-grid > div {
     border-radius: 12px;
     padding: 10px 12px;

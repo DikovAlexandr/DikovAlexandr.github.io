@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Александр Диков — ML / R&D Engineer</title>
-  <meta name="description" content="Портфолио Александра Дикова: ML / R&D, PINN, численные методы, обработка документов, инженерные проекты." />
+  <title>Александр Диков — ML Engineer (NLP/CV)</title>
+  <meta name="description" content="Портфолио Александра Дикова: NLP/CV, LLM, SciML, RAG и исследовательские ML-проекты." />
   <meta name="theme-color" content="#0a0b12" />
 
-  <meta property="og:title" content="Александр Диков — ML / R&D Engineer" />
+  <meta property="og:title" content="Александр Диков — ML Engineer (NLP/CV)" />
   <meta property="og:description" content="Сочный GitHub Pages сайт-портфолио с проектами и анимациями." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://dikovalexandr.github.io/" />
@@ -18,13 +18,8 @@
 
   <link rel="stylesheet" href="./style.css" />
 </head>
-<body>
+  <body>
   <canvas id="bg-canvas" aria-hidden="true"></canvas>
-
-  <div class="noise" aria-hidden="true"></div>
-  <div class="orb orb-1" aria-hidden="true"></div>
-  <div class="orb orb-2" aria-hidden="true"></div>
-  <div class="orb orb-3" aria-hidden="true"></div>
 
   <header class="topbar container reveal">
     <div class="pill">
@@ -39,6 +34,9 @@
       <a class="btn btn-primary" href="#projects">
         Проекты
       </a>
+      <a class="btn btn-ghost" href="./DikovCVru_2025.pdf" target="_blank" rel="noreferrer">
+        CV
+      </a>
     </nav>
   </header>
 
@@ -51,16 +49,16 @@
 
         <h1>
           Александр Диков
-          <span class="gradient-text">ML / R&D Engineer</span>
+          <span class="gradient-text">ML Engineer • NLP/CV</span>
         </h1>
 
         <p class="lead">
-          Исследования, numerical methods, PINN, обработка документов и инженерные проекты.
+          ML Engineer с 2+ годами практического опыта в экспериментах, обучении и продакшене решений в NLP, CV и SciML.
         </p>
 
         <p class="sublead">
-          Делаю проекты на стыке машинного обучения, вычислительных методов и практической инженерии.
-          Люблю превращать исследовательские идеи в понятные прототипы и рабочие инструменты.
+          Работаю на стыке прикладных исследований и инженерии: от конвейеров данных, fine-tuning и инференса до RAG-систем и мониторинга.
+          Отдельный интерес: диффузионные и мультимодальные модели, а также MLOps-практики.
         </p>
 
         <div class="hero-actions">
@@ -74,16 +72,16 @@
 
         <div class="stats">
           <div class="stat-card">
-            <div class="stat-value">12+</div>
-            <div class="stat-label">Repositories</div>
+            <div class="stat-value">2+ years</div>
+            <div class="stat-label">Practical ML experience</div>
           </div>
           <div class="stat-card">
-            <div class="stat-value">ML / R&D</div>
+            <div class="stat-value">NLP / CV</div>
             <div class="stat-label">Focus</div>
           </div>
           <div class="stat-card">
-            <div class="stat-value">PINN</div>
-            <div class="stat-label">Research interest</div>
+            <div class="stat-value">SciML + RAG</div>
+            <div class="stat-label">Research & engineering</div>
           </div>
         </div>
       </div>
@@ -101,11 +99,11 @@
           <div class="identity-list">
             <div class="info-card">
               <div class="muted">Role</div>
-              <div>ML / R&D Engineer</div>
+              <div>ML Engineer</div>
             </div>
             <div class="info-card">
               <div class="muted">Focus</div>
-              <div>PINN • Numerical Methods • Document AI</div>
+              <div>NLP • CV • LLMs • SciML • RAG</div>
             </div>
             <div class="info-card">
               <div class="muted">GitHub</div>
@@ -113,6 +111,12 @@
                 <a href="https://github.com/DikovAlexandr" target="_blank" rel="noreferrer">
                   github.com/DikovAlexandr
                 </a>
+              </div>
+            </div>
+            <div class="info-card">
+              <div class="muted">Email</div>
+              <div>
+                <a href="mailto:dsasha0102@gmail.com">dsasha0102@gmail.com</a>
               </div>
             </div>
           </div>
@@ -129,21 +133,43 @@
       <div class="chips-grid">
         <div class="chip">Python</div>
         <div class="chip">C++</div>
-        <div class="chip">Machine Learning</div>
-        <div class="chip">PINN</div>
-        <div class="chip">Numerical Methods</div>
-        <div class="chip">OpenCV / OCR</div>
-        <div class="chip">Document Parsing</div>
-        <div class="chip">Scientific Computing</div>
+        <div class="chip">PyTorch</div>
+        <div class="chip">Transformers / PEFT</div>
+        <div class="chip">Computer Vision</div>
+        <div class="chip">NLP & LLMs</div>
+        <div class="chip">RAG (LangChain)</div>
+        <div class="chip">PINN / SciML</div>
+        <div class="chip">ONNX Runtime / TensorRT</div>
+        <div class="chip">Docker / Linux / API</div>
+      </div>
+    </section>
+
+    <section class="container section grid-2">
+      <div class="glass-card reveal">
+        <h3>Профессиональный опыт</h3>
+        <ul class="bullet-list">
+          <li>Стажер в Цифрум (1 год): fine-tuning TaTR для сегментации таблиц в документах, разработка PINN-решателя для CFD задач.</li>
+          <li>Junior ML Developer в Сбере (6 месяцев): R&D моделей для идентификации токсичных SQL-запросов (TF-IDF, BERT, GNN).</li>
+          <li>Python Developer в GET LAB (1.5 года): ONNX-инференс, RAG по документации, агентные решения для инженерных задач.</li>
+        </ul>
+      </div>
+
+      <div class="glass-card reveal delay-1">
+        <h3>Образование и достижения</h3>
+        <ul class="bullet-list">
+          <li>НИЯУ МИФИ: магистратура по прикладной математике и информатике (с 2024), бакалавриат по прикладной математике и физике (2020–2024).</li>
+          <li>Победитель НТО по компьютерному зрению, победитель хакатонов «РазвивAI», «NuclearIT», «Лидеры цифровой трансформации».</li>
+          <li>Преподаватель курса «Машинное обучение для научных вычислений».</li>
+        </ul>
       </div>
     </section>
 
     <section id="projects" class="container section">
       <div class="section-head reveal">
         <div class="section-kicker">Selected repositories</div>
-        <h2>Проекты, которые стоит показать</h2>
+        <h2>Топ-репозитории</h2>
         <p class="section-desc">
-          Ниже — красиво оформленные карточки. Просто меняй ссылки/описания под актуальные репозитории.
+          Репозитории, которые лучше всего отражают профиль NLP/CV Engineer и исследовательский трек.
         </p>
       </div>
 
@@ -154,17 +180,17 @@
             <div class="project-top">
               <div>
                 <h3>PINN</h3>
-                <p>Physics-Informed Neural Networks for heat equation</p>
+                <p>Physics-Informed Neural Networks for CFD/PDE tasks</p>
               </div>
               <span class="project-icon">✨</span>
             </div>
             <p class="project-text">
-              Исследовательский проект по PINN для решения задач математической физики.
-              Демонстрирует связку ML + физика + численные методы.
+              Исследовательский проект на стыке ML и вычислительной физики.
+              Фокус на PINN-подходе к задачам моделирования и численным экспериментам.
             </p>
             <div class="tags">
               <span>PINN</span>
-              <span>Physics</span>
+              <span>SciML</span>
               <span>Research</span>
             </div>
             <a class="btn btn-card" href="https://github.com/DikovAlexandr/PINN" target="_blank" rel="noreferrer">Open repo →</a>
@@ -176,21 +202,21 @@
           <div class="project-content">
             <div class="project-top">
               <div>
-                <h3>TableExtraction</h3>
-                <p>Извлечение данных из таблиц в документах</p>
+                <h3>AtomRAG</h3>
+                <p>RAG-система по технической документации (private)</p>
               </div>
               <span class="project-icon">📄</span>
             </div>
             <p class="project-text">
-              Практический R&D-кейс по обработке документов: парсинг табличных данных, OCR-подходы,
-              работа со сканами и цифровыми источниками.
+              Закрытый репозиторий с RAG-архитектурой для прикладных задач поиска и ответа по документации.
+              Покрывает пайплайн индексации, retrieval и генерацию ответов.
             </p>
             <div class="tags">
-              <span>OpenCV</span>
-              <span>OCR</span>
-              <span>Document AI</span>
+              <span>RAG</span>
+              <span>LLM</span>
+              <span>Private repo</span>
             </div>
-            <a class="btn btn-card" href="https://github.com/DikovAlexandr/TableExtraction" target="_blank" rel="noreferrer">Open repo →</a>
+            <a class="btn btn-card" href="https://github.com/DikovAlexandr" target="_blank" rel="noreferrer">Private repo</a>
           </div>
         </article>
 
@@ -199,21 +225,21 @@
           <div class="project-content">
             <div class="project-top">
               <div>
-                <h3>ChemistryParser</h3>
-                <p>Термодинамические величины по химическим формулам</p>
+                <h3>dico</h3>
+                <p>Исследовательский репозиторий для статьи (private)</p>
               </div>
               <span class="project-icon">🧪</span>
             </div>
             <p class="project-text">
-              Инженерный/научный инструмент с предметной логикой и вычислениями.
-              Хороший пример прикладного вычислительного ПО.
+              Закрытый репозиторий, используемый в подготовке научного материала.
+              Демонстрирует работу с исследовательским циклом: от идеи до воспроизводимого эксперимента.
             </p>
             <div class="tags">
-              <span>C++</span>
-              <span>Scientific</span>
-              <span>Parsing</span>
+              <span>NLP/CV</span>
+              <span>Research</span>
+              <span>Private repo</span>
             </div>
-            <a class="btn btn-card" href="https://github.com/DikovAlexandr/ChemistryParser" target="_blank" rel="noreferrer">Open repo →</a>
+            <a class="btn btn-card" href="https://github.com/DikovAlexandr" target="_blank" rel="noreferrer">Private repo</a>
           </div>
         </article>
 
@@ -222,21 +248,21 @@
           <div class="project-content">
             <div class="project-top">
               <div>
-                <h3>NumericalMethods</h3>
-                <p>Программы по курсу «Численные методы»</p>
+                <h3>fine-tune-platform</h3>
+                <p>Платформа для экспериментов с тонкой настройкой моделей</p>
               </div>
               <span class="project-icon">📐</span>
             </div>
             <p class="project-text">
-              Учебно-прикладные реализации численных методов: фундаментальная база,
-              алгоритмическое мышление и инженерная аккуратность.
+              Хакатонный и продуктовый формат разработки: быстрый цикл проверки гипотез,
+              удобная инфраструктура для обучения и сравнения ML-моделей.
             </p>
             <div class="tags">
-              <span>Numerics</span>
-              <span>Algorithms</span>
-              <span>Jupyter</span>
+              <span>Fine-tuning</span>
+              <span>MLOps</span>
+              <span>Hackathon</span>
             </div>
-            <a class="btn btn-card" href="https://github.com/DikovAlexandr/NumericalMethods" target="_blank" rel="noreferrer">Open repo →</a>
+            <a class="btn btn-card" href="https://github.com/DikovAlexandr/fine-tune-platform" target="_blank" rel="noreferrer">Open repo →</a>
           </div>
         </article>
       </div>
@@ -244,24 +270,22 @@
 
     <section class="container section grid-2">
       <div class="glass-card reveal">
-        <h3>Почему профиль сильный</h3>
+        <h3>Курсовые репозитории</h3>
         <ul class="bullet-list">
-          <li>Сочетание фундаментальных задач (численные методы, физика) и ML-подходов.</li>
-          <li>Практические R&D-кейсы по обработке документов и извлечению данных.</li>
-          <li>Хорошая база для позиционирования как ML / R&D engineer.</li>
+          <li><a href="https://github.com/DikovAlexandr/MLCourse97" target="_blank" rel="noreferrer">MLCourse97</a> — материалы и практика по машинному обучению.</li>
+          <li><a href="https://github.com/DikovAlexandr/PythonCourse" target="_blank" rel="noreferrer">PythonCourse</a> — учебный репозиторий по Python.</li>
+          <li><a href="https://github.com/DikovAlexandr/CppCourse" target="_blank" rel="noreferrer">CppCourse</a> — курс и упражнения по C++.</li>
         </ul>
       </div>
 
       <div class="glass-card reveal delay-1">
-        <h3>Что можно быстро улучшить</h3>
-        <div class="mini-grid">
-          <div>Добавить фото/аватар</div>
-          <div>Секция опыт работы</div>
-          <div>Публикации / доклады</div>
-          <div>RU/EN переключатель</div>
-          <div>GitHub API (динамика)</div>
-          <div>Тёмная/светлая тема</div>
-        </div>
+        <h3>Хакатонные репозитории</h3>
+        <ul class="bullet-list">
+          <li><a href="https://github.com/DikovAlexandr/T-Plexity" target="_blank" rel="noreferrer">T-Plexity</a></li>
+          <li><a href="https://github.com/DikovAlexandr/AtomicHack-AXIOM" target="_blank" rel="noreferrer">AtomicHack-AXIOM</a></li>
+          <li><a href="https://github.com/DikovAlexandr/fine-tune-platform" target="_blank" rel="noreferrer">fine-tune-platform</a></li>
+          <li><a href="https://github.com/DikovAlexandr/product-review-classifier-llm" target="_blank" rel="noreferrer">product-review-classifier-llm</a></li>
+        </ul>
       </div>
     </section>
 
@@ -275,8 +299,17 @@
         <p>
           GitHub: <a href="https://github.com/DikovAlexandr" target="_blank" rel="noreferrer">github.com/DikovAlexandr</a>
         </p>
+        <p>
+          Email: <a href="mailto:dsasha0102@gmail.com">dsasha0102@gmail.com</a>
+        </p>
+        <p>
+          Telegram: <a href="https://t.me/alexanderdikov" target="_blank" rel="noreferrer">@alexanderdikov</a>
+        </p>
+        <p>
+          CV: <a href="./DikovCVru_2025.pdf" target="_blank" rel="noreferrer">DikovCVru_2025.pdf</a>
+        </p>
         <p class="muted">
-          (Сюда можно добавить email, Telegram, LinkedIn, CV PDF)
+          Kaggle и LeetCode доступны в CV.
         </p>
       </div>
     </section>
